@@ -2,17 +2,6 @@
 
 namespace Amiibo.Models;
 
-public class Release
-{
-    [JsonPropertyName("au")] public string Au { get; set; }
-
-    [JsonPropertyName("eu")] public string Eu { get; set; }
-
-    [JsonPropertyName("jp")] public string Jp { get; set; }
-
-    [JsonPropertyName("na")] public string Na { get; set; }
-}
-
 public class NintendoAmiibos
 {
     [JsonPropertyName("amiiboSeries")] public string AmiiboSeries { get; set; }
@@ -32,4 +21,20 @@ public class NintendoAmiibos
     [JsonPropertyName("tail")] public string Tail { get; set; }
 
     [JsonPropertyName("type")] public string Type { get; set; }
+}
+
+public class Release
+{
+    [JsonPropertyName("au")] public string Au { get; set; }
+
+    [JsonPropertyName("eu")] public string Eu { get; set; }
+
+    [JsonPropertyName("jp")] public string Jp { get; set; }
+
+    [JsonPropertyName("na")] public string Na { get; set; }
+}
+
+public class Root
+{
+    [JsonPropertyName("amiibo")] public List<NintendoAmiibos> NintendoAmiibos { get; set; }
 }
