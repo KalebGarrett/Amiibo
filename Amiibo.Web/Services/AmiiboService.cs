@@ -12,8 +12,8 @@ namespace Amiibo.Web.Services
             if (result.IsSuccessStatusCode)
             {
                 var json = await result.Content.ReadAsStringAsync();
-                JsonSerializer.Deserialize<Root>(json);
-                return Root.NintendoAmiibos;
+                var root = JsonSerializer.Deserialize<Root>(json);
+                return root.NintendoAmiibos;
             }
 
             return new List<NintendoAmiibo>();

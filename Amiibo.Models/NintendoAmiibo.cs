@@ -36,5 +36,5 @@ public class Release
 
 public class Root
 {
-    [JsonPropertyName("amiibo")] public static List<NintendoAmiibo> NintendoAmiibos { get; set; }
+    [JsonPropertyName("amiibo")] public List<NintendoAmiibo> NintendoAmiibos { get; set; }
 }
