@@ -5,6 +5,6 @@ namespace Amiibo.Web.Models
 {
     public class IndexViewModel
     {
-        public List<Root> Amiibos { get; set; } = new List<Root>();
+        public List<NintendoAmiibo> Amiibos { get; set; } = new List<NintendoAmiibo>();
     }
 }

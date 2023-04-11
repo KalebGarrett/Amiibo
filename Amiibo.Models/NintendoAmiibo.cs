@@ -2,7 +2,7 @@
 
 namespace Amiibo.Models;
 
-public class NintendoAmiibos
+public class NintendoAmiibo
 {
     [JsonPropertyName("amiiboSeries")] public string AmiiboSeries { get; set; }
 
@@ -36,5 +36,5 @@ public class Release
 
 public class Root
 {
-    [JsonPropertyName("amiibo")] public List<NintendoAmiibos> NintendoAmiibos { get; set; }
+    [JsonPropertyName("amiibo")] public static List<NintendoAmiibo> NintendoAmiibos { get; set; }
 }
