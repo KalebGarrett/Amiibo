@@ -4,6 +4,8 @@ namespace Amiibo.Models;
 
 public class NintendoAmiibo
 {
+    [JsonIgnore] public string Id => Type.Replace("Figure", "");
+
     [JsonPropertyName("amiiboSeries")] public string AmiiboSeries { get; set; }
 
     [JsonPropertyName("character")] public string Character { get; set; }

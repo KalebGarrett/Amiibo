@@ -23,6 +23,19 @@ public class HomeController : Controller
         return View(model);
     }
 
+    [HttpGet("amiibo/{id}")]
+    public async Task<IActionResult> Amiibo(string id)
+    {
+        var model = new AmiiboViewModel();
+        model.NintendoAmiibo = await _amiiboService.Get(id);
+        if (model.NintendoAmiibo == null)
+        {
+            return RedirectToAction("Index");
+        }
+
+        return View(model);
+    }
+
     public IActionResult Privacy()
     {
         return View();

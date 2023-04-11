@@ -9,6 +9,8 @@
     <tr>
         <th>Image</th>
         <th>Name</th>
+        <th>Character</th>
+        <th>Game Series</th>
     </tr>
     @foreach (var amiibo in Model.Amiibos.OrderBy(x => x.Name))
     {
@@ -20,6 +22,11 @@
                 }
             </td>
             <td>@amiibo.Name</td>
+            <td>@amiibo.Character</td>
+            <td>@amiibo.GameSeries</td>
+            <td>
+                <a href="/nintendoamiibo/@amiibo.Id">View</a>
+            </td>
         </tr>
     }
 </table>
