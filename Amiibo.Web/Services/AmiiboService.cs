@@ -34,7 +34,7 @@ namespace Amiibo.Web.Services
                 await GetAll();
             }
 
-            var amiibo = NintendoAmiibos.FirstOrDefault(x => x.Id == id.ToLower());
+            var amiibo = NintendoAmiibos.FirstOrDefault(x => x.Id.ToLower() == id.ToLower());
             return amiibo;
         }
 
