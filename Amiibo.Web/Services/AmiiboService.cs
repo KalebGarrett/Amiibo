@@ -1,5 +1,7 @@
-﻿using System.Text.Json;
+﻿using System.Security.Cryptography;
+using System.Text.Json;
 using Amiibo.Models;
+
 
 namespace Amiibo.Web.Services
 {
@@ -19,7 +21,6 @@ namespace Amiibo.Web.Services
             {
                 var json = await result.Content.ReadAsStringAsync();
                 var root = JsonSerializer.Deserialize<Root>(json);
-                //add caching
                 NintendoAmiibos = root.NintendoAmiibos;
                 return NintendoAmiibos;
             }
@@ -38,7 +39,17 @@ namespace Amiibo.Web.Services
             return amiibo;
         }
 
+        public async Task<List<NintendoAmiibo>> Query(string query)
+        {
+            if (NintendoAmiibos == null)
+            {
+                await GetAll();
+            }
+
+            var amiibos = NintendoAmiibos.Where(x => x.Name.ToLower().Contains(query.ToLower()));
+            return amiibos.ToList();
+        }
+
     }
-  
 }
 

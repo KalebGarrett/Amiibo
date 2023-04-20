@@ -8,6 +8,10 @@ html {
   }
 }
 
+* {
+  font-family: Lato, sans-serif;
+}
+
 html {
   position: relative;
   min-height: 100%;
@@ -15,4 +19,70 @@ html {
 
 body {
   margin-bottom: 60px;
+  background-image: url("../img/amiibo-bg.png");
+  background-repeat: repeat;
+  background-attachment: fixed;
+}
+
+h1 {
+  padding-top: 1rem;
+}
+
+h2 {
+  padding-top: 1rem;
+} 
+
+.btn-search {
+  color: #d93d38;
+}
+
+#pg-body-bg {
+  background-color: white;
+  border-radius: 25px;
+}
+
+.home-btn {
+  font-size: 24px;
+  text-decoration: none;
+}
+
+.home-btn:hover {
+  opacity: 0.8;
+  text-decoration: none;
+} 
+
+.home-btn:active {
+  opacity: 0.5;
+}
+
+.home-btn:focus {
+  outline: none;
+}
+
+.info-btn {
+  font-size: 16px;
+  text-decoration: none;
+  padding:0.4em 1em;
+  border-radius: 8px;
+  transition: all .5s ease-in-out;
+}
+
+.info-btn:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
+  text-decoration: none;
+}
+
+.info-btn:active {
+  opacity: 0.5;
+}
+
+.info-btn:focus {
+  outline: none;
+}
+
+/* Change footer bg color */
+footer {
+  background: #EE6055;
+  color: white;
 }

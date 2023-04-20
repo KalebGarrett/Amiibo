@@ -1,0 +1,29 @@
+﻿@model List<Amiibo.Models.NintendoAmiibo>
+
+<table class="table">
+    <tr>
+        <th>Image</th>
+        <th>Name</th>
+        <th>Character</th>
+        <th>Game Series</th>
+    </tr>
+    @foreach (var amiibo in Model.OrderBy(x => x.Name))
+    {
+        <tr>
+            <td>
+                @if (amiibo.Image != null)
+                {
+                    <img src="@amiibo.Image" alt="@amiibo.Name" style="height: 64px"/>
+                }
+            </td>
+            <td>@amiibo.Name</td>
+            <td>@amiibo.Character</td>
+            <td>@amiibo.GameSeries</td>
+            <td>
+                <a href="/amiibo/@amiibo.Id" class="btn info-btn btn-danger">
+                    <i class="fa-solid fa-question" style="color: #ffffff;"></i>
+                </a>
+            </td>
+        </tr>
+    }
+</table>

@@ -5,28 +5,4 @@
 }
 
 <h1>Amiibo</h1>
-<table class="table">
-    <tr>
-        <th>Image</th>
-        <th>Name</th>
-        <th>Character</th>
-        <th>Game Series</th>
-    </tr>
-    @foreach (var amiibo in Model.Amiibos.OrderBy(x => x.Name))
-    {
-        <tr>
-            <td>
-                @if (amiibo.Image != null)
-                {
-                    <img src="@amiibo.Image" alt="@amiibo.Name" style="height: 64px"/>
-                }
-            </td>
-            <td>@amiibo.Name</td>
-            <td>@amiibo.Character</td>
-            <td>@amiibo.GameSeries</td>
-            <td>
-                <a href="/amiibo/@amiibo.Id">View</a>
-            </td>
-        </tr>
-    }
-</table>
+@Html.Partial("AmiiboTable", Model.Amiibos)

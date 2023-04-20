@@ -4,16 +4,38 @@
     ViewData["Title"] = $"NintendoAmiibo - {Model.NintendoAmiibo.Character}";
 }
 
-<h1>@Model.NintendoAmiibo.Character</h1>
-
 <div class="row">
     <div class="col-md-8">
+        <h1>@Model.NintendoAmiibo.Character</h1>
+
         <img src="@Model.NintendoAmiibo.Image" alt="@Model.NintendoAmiibo.Name" style="height: 96px"/>
-        
+
         <h2>Name</h2>
         @Model.NintendoAmiibo.Name
-        
-        <h2>Release</h2>
-        @Model.NintendoAmiibo.Release
+
+        <h2>Game Series</h2>
+        @Model.NintendoAmiibo.GameSeries
+    </div>
+
+    <div class="col-md-4">
+        <h2>Releases</h2>
+        <table class="table table-bordered table-striped">
+            <tr>
+                <th>Au</th>
+                <td>@Model.NintendoAmiibo.Release.Au</td>
+            </tr>
+            <tr>
+                <th>Eu</th>
+                <td>@Model.NintendoAmiibo.Release.Eu</td>
+            </tr>
+            <tr>
+                <th>Jp</th>
+                <td>@Model.NintendoAmiibo.Release.Jp</td>
+            </tr>
+            <tr>
+                <th>Na</th>
+                <td>@Model.NintendoAmiibo.Release.Na</td>
+            </tr>
+        </table>
     </div>
 </div>

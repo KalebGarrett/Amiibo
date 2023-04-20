@@ -35,7 +35,17 @@ public class HomeController : Controller
 
         return View(model);
     }
-    
+
+    [HttpGet("search")]
+    [HttpPost("search")]
+    public async Task<IActionResult> QueryResults(string query)
+    {
+        var model = new SearchViewModel();
+        model.Query = query;
+        model.Results = await _amiiboService.Query(query);
+        return View(model);
+    }
+
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
     {
