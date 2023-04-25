@@ -19,7 +19,7 @@ html {
 
 body {
   margin-bottom: 60px;
-  background-image: url("../img/amiibo-bg.png");
+  background-image: url("../img/bg-amiibo.jpg");
   background-repeat: repeat;
   background-attachment: fixed;
 }
@@ -32,8 +32,8 @@ h2 {
   padding-top: 1rem;
 } 
 
-.btn-search {
-  color: #d93d38;
+#btn-search {
+  color: red;
 }
 
 #pg-body-bg {
@@ -81,8 +81,7 @@ h2 {
   outline: none;
 }
 
-/* Change footer bg color */
 footer {
-  background: #EE6055;
+  background: #df4759;
   color: white;
 }

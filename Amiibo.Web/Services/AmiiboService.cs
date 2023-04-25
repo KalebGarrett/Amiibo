@@ -8,13 +8,14 @@ namespace Amiibo.Web.Services
     public class AmiiboService
     {
         public List<NintendoAmiibo> NintendoAmiibos { get; set; } = null;
+
         public async Task<List<NintendoAmiibo>> GetAll()
         {
             if (NintendoAmiibos != null)
             {
                 return NintendoAmiibos;
             }
-            
+
             using var client = new HttpClient();
             var result = await client.GetAsync("https://www.amiiboapi.com/api/amiibo/");
             if (result.IsSuccessStatusCode)
@@ -46,10 +47,10 @@ namespace Amiibo.Web.Services
                 await GetAll();
             }
 
-            var amiibos = NintendoAmiibos.Where(x => x.Name.ToLower().Contains(query.ToLower()));
+            var amiibos = NintendoAmiibos.Where(x =>
+                x.Name.ToLower().Contains(query.ToLower()) || x.Character.ToLower().Contains(query.ToLower()) ||
+                x.GameSeries.ToLower().Contains(query.ToLower()));
             return amiibos.ToList();
         }
-
     }
 }
-
