@@ -32,17 +32,13 @@ h2 {
   padding-top: 1rem;
 } 
 
-#btn-search {
-  color: red;
-}
-
 #pg-body-bg {
   background-color: white;
   border-radius: 25px;
 }
 
 .home-btn {
-  font-size: 24px;
+  font-size: 10px;
   text-decoration: none;
 }
 
